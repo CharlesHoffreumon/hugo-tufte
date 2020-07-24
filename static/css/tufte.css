@@ -58,7 +58,7 @@ h2 { font-style: italic;
      font-weight: 400;
      margin-top: 2.1rem;
      margin-bottom: 0;
-     font-size: 2.2rem;
+     font-size: 1.7rem;
      line-height: 1; }
 
 h3 { font-style: italic;
@@ -91,7 +91,9 @@ p { line-height: 2rem;
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
     padding-right: 0;
-    vertical-align: baseline; }
+    vertical-align: baseline;
+    text-align: justify;
+    text-justify: inter-word;}
 
 /* Chapter Epigraphs */
 div.epigraph { margin: 5em 0; }
@@ -166,7 +168,11 @@ a:link::-moz-selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.0
                          background: #b4d5fe; }
 
 /* Sidenotes, margin notes, figures, captions */
-img { max-width: 100%; }
+img { max-width: 100%;}
+
+.verticalimage {max-height: 300px;
+		clear: right;
+		float: left;}
 
 .sidenote, .marginnote { float: right;
                          clear: right;
@@ -178,6 +184,9 @@ img { max-width: 100%; }
                          line-height: 1.3;
                          vertical-align: baseline;
                          position: relative; }
+
+.margincaption { float:left;
+		 clear:left; }
 
 .table-caption { float:right;
                  clear:right;
@@ -246,9 +255,10 @@ label.sidenote-number { display: inline; }
 label.margin-toggle:not(.sidenote-number) { display: none; }
 
 @media (max-width: 760px) { label.margin-toggle:not(.sidenote-number) { display: inline; }
-                            .sidenote, .marginnote { display: none; }
+                            .sidenote, .marginnote .marginimage { display: none; }
                             .margin-toggle:checked + .sidenote,
-                            .margin-toggle:checked + .marginnote { display: block;
+                            .margin-toggle:checked + .marginnote,
+			    .margin-toggle:checked + .marginimage { display: block;
                                                                    float: left;
                                                                    left: 1rem;
                                                                    clear: both;

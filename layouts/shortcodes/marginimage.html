@@ -1,3 +1,7 @@
 <label {{ $marginnoteDomIdSuffix := .Ordinal }} for="marginnote-{{.Page.UniqueID}}-{{ $marginnoteDomIdSuffix }}" class="margin-toggle">&#8853;</label>
 <input type="checkbox" id="marginnote-{{.Page.UniqueID}}-{{ $marginnoteDomIdSuffix }}" class="margin-toggle"/>
-<span class="marginnote">{{ .Inner }}</span>
+<div class="marginimage">
+  <figure>
+    <img src ="{{ .Get "src" }}" {{ if isset .Params "orientation" }} class = "{{ .Get "orientation"}}" {{end}} {{if isset .Params "caption"}} caption="{{ .Get "caption"}}" {{end}}></img>
+  </figure>
+</div>
